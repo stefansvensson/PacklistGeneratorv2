@@ -4,6 +4,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.home',
   'ngBoilerplate.about',
   'ngBoilerplate.flex',
+  'ngBoilerplate.start',
   'ui.router'
 ])
 
@@ -20,6 +21,8 @@ angular.module( 'ngBoilerplate', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
+
+  $scope.pageUrl = $location.path();
 })
 
 ;
