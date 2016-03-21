@@ -8,9 +8,15 @@ angular.module( 'ngBoilerplate.flex', [
   $stateProvider.state( 'flex', {
     url: '/flex',
     views: {
-      "main": {
+      "content": {
         controller: 'FlexCtrl',
         templateUrl: 'flex/flex.tpl.html'
+      },
+      "header": {
+        templateUrl: 'header.tpl.html'
+      },
+      "footer": {
+        templateUrl: 'footer.tpl.html'
       }
     },
     data:{ pageTitle: 'What is It?' }
@@ -18,12 +24,5 @@ angular.module( 'ngBoilerplate.flex', [
 })
 
 .controller( 'FlexCtrl', function FlexCtrl( $scope ) {
-  // This is simple a demo for UI Boostrap.
-  $scope.dropdownDemoItems = [
-    "The first choice!",
-    "And another choice for you.",
-    "but wait! A third!"
-  ];
-})
 
-;
+});

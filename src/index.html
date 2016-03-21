@@ -46,15 +46,20 @@
             <div class="main-site-wrapper">
                 
                 <!-- HEADER -->
-                <div class="page-header site-header"> <!--page-header class from Bootstrap-->
+                <!-- <div class="page-header site-header"> 
                     <a href="#"><h1 class="header-title"><i class="icon ion-social-buffer"></i><span class="thin"> Awesome Packlists</span></h1></a>
-                </div>
+                </div> -->
+
+                <!-- <div id="header" ng-include="'header.tpl.html'"></div> -->
+                <div ui-view="header"></div>
                 
                 <!-- MAIN CONTENT WRAPPER + UI-VIEW -->
-                <div class="main-content-wrapper" ui-view="main"></div>
+                <div class="main-content-wrapper" ui-view="content"></div>
                 
+
+                <div ui-view="footer"></div>
                 <!-- FOOTER -->
-                <footer class="site-footer"><p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p></footer>
+                <!-- <footer class="site-footer"><p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p></footer> -->
             </div>
         </div>
     </div>

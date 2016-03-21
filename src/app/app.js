@@ -9,7 +9,7 @@ angular.module( 'ngBoilerplate', [
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
+  $urlRouterProvider.otherwise( '/start' );
 })
 
 .run( function run () {
@@ -21,8 +21,6 @@ angular.module( 'ngBoilerplate', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
-
-  $scope.pageUrl = $location.path();
 })
 
 ;

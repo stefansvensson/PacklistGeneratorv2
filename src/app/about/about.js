@@ -8,7 +8,7 @@ angular.module( 'ngBoilerplate.about', [
   $stateProvider.state( 'about', {
     url: '/about',
     views: {
-      "main": {
+      "content": {
         controller: 'AboutCtrl',
         templateUrl: 'about/about.tpl.html'
       }
