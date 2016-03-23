@@ -11,6 +11,9 @@ angular.module( 'ngBoilerplate.start', [
       "content": {
         controller: 'StartCtrl',
         templateUrl: 'start/start.tpl.html'
+      },
+      "footer": {
+        templateUrl: 'footer.tpl.html'
       }
     },
     data:{ pageTitle: 'What is It?' }

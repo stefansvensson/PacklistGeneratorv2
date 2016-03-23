@@ -24,5 +24,17 @@ angular.module( 'ngBoilerplate.flex', [
 })
 
 .controller( 'FlexCtrl', function FlexCtrl( $scope ) {
+/*  $scope.updateHeightOfImage = function(){
+    var bckgrndImg = document.getElementById('background-image-container');
+    var packlistFrame = document.getElementById('packlist-frame');
 
+    if(packlistFrame.clientHeight+30>bckgrndImg.clientHeight){
+      bckgrndImg.setAttribute("style","height:"+(packlistFrame.clientHeight+30)+"px")
+    };
+  };*/
+
+  $scope.phText = 8;
+  $scope.updatePhText = function(){
+    $scope.phText+=8;
+  };
 });
