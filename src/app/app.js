@@ -5,6 +5,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.about',
   'ngBoilerplate.flex',
   'ngBoilerplate.start',
+  'ngBoilerplate.settings',
   'ui.router'
 ])
 

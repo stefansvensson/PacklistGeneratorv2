@@ -1,0 +1,36 @@
+{
+  "vacations": [
+    {
+        "id": "summervacation",
+        "imageUrl": "assets/icons/summer.svg",
+        "name": "Summer Vacation"
+    },
+    {
+        "id": "wintervacation",
+        "imageUrl": "assets/icons/winter.svg",
+        "name": "Winter Vacation"
+    },
+    {
+        "id": "cityweekend",
+        "imageUrl": "assets/icons/city-weekend.svg",
+        "name": "City Weekend"
+    },
+    {
+        "id": "emptylist",
+        "imageUrl": "assets/icons/emptylist.svg",
+        "name": "Empty List"
+    }
+  ],
+  "gender": [
+    {
+        "id": "male",
+        "imageUrl": "assets/icons/male.svg",
+        "name": "Male"
+    },
+    {
+        "id": "female",
+        "imageUrl": "assets/icons/female.svg",
+        "name": "Female"
+    }
+  ]
+}
