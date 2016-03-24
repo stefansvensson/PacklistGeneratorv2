@@ -1,11 +1,40 @@
 <!-- SETTINGS.TPL.HTML -->
+<div class="vertical-line"></div>
 
-<div class="cover-settings" style="border: 1px solid blue">
-	<div class="inner-wrapper-centered ">
-		<p>Hej</p>
-<!-- 		<div ng-repeat="x in navButtons.gender">{{x.name}}</div> -->
+<div class="cover-settings-container">
+	
+	<h3>Please make a selection for each step below</h3>
 
-		
+
+
+	<!-- GENDER -->
+	<div class="row remove-margin">
+		<div class="col-sm-6 centered" ng-repeat="x in navButtons.gender" style="border:0px solid white">
+			<img class="img-circle" ph-img="80x80" />
+			<div>{{x.name}}</div>
+		</div>
 	</div>
-</div>
 
+	<!-- HORISONTAL LINE -->
+	<div class="horisontal-line"></div>
+
+	<!-- VACATIONS -->
+	<div class="row remove-margin">
+		<div class="col-sm-3 centered remove-padding" ng-repeat="x in navButtons.vacations" style="border:0px solid white">
+			<img class="img-circle" ph-img="80x80" />
+			<div>{{x.name}}</div>
+		</div>
+	</div>
+
+	<!-- HORISONTAL LINE -->
+	<div class="horisontal-line"></div>
+
+	<!-- DESTINATION -->
+	<div class="row remove-margin">
+		<div class="col-sm-6 centered" ng-repeat="x in navButtons.destinations" style="border:0px solid white">
+			<img class="img-circle" ph-img="80x80" />
+			<div>{{x.name}}</div>
+		</div>
+	</div>
+
+</div>

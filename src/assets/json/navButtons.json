@@ -32,5 +32,17 @@
         "imageUrl": "assets/icons/female.svg",
         "name": "Female"
     }
+  ],
+    "destinations": [
+    {
+        "id": "domestic",
+        "imageUrl": "assets/icons/male.svg",
+        "name": "Domestic Travel"
+    },
+    {
+        "id": "international",
+        "imageUrl": "assets/icons/female.svg",
+        "name": "International Travel"
+    }
   ]
 }
