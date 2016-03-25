@@ -24,6 +24,8 @@ angular.module( 'ngBoilerplate.settings', [
 })
 
 .controller( 'SettingsCtrl', ['$scope', '$http', function SettingsCtrl( $scope, $http ) {
+  
+  /*NAVBUTTONS JSON OBJECT*/
   $http.get('assets/json/navButtons.json').success(function(data) {
     $scope.navButtons = data;
   });

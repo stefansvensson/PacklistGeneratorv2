@@ -1,33 +1,42 @@
 <!-- SETTINGS.TPL.HTML -->
-<div class="vertical-line"></div>
-
 <div class="cover-settings-container">
-	
-	<h3>Please make a selection for each step below</h3>
 
-
+	<h3>What is your gender?</h3>
 
 	<!-- GENDER -->
-	<div class="row remove-margin">
-		<div class="col-sm-6 centered" ng-repeat="x in navButtons.gender" style="border:0px solid white">
-			<img class="img-circle" ph-img="80x80" />
-			<div>{{x.name}}</div>
+	<div class="row bottom-border">
+
+		<div class="col-sm-6" ng-repeat="x in navButtons.gender">
+
+			<div class="hover-icon-container hover-icon-effect-1 hover-icon-effect-1a">
+
+				<div class="hover-icon" ng-class="{'hover-icon-selected': isMale==true}" ng-click="isMale=true">
+					<div class="hover-icon-inner" ng-class="{'hover-icon-inner-selected': isMale==true}" style="
+						-webkit-mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+						mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+						-webkit-mask-size: cover;
+  						mask-size: cover;
+						">
+					</div>
+				</div>
+
+
+			</div>
+			<div class="centered">{{x.name}}</div>
 		</div>
 	</div>
 
-	<!-- HORISONTAL LINE -->
-	<div class="horisontal-line"></div>
+	<h3>Type of vacation?</h3>
 
 	<!-- VACATIONS -->
-	<div class="row remove-margin">
+	<div class="row remove-margin bottom-border">
 		<div class="col-sm-3 centered remove-padding" ng-repeat="x in navButtons.vacations" style="border:0px solid white">
 			<img class="img-circle" ph-img="80x80" />
 			<div>{{x.name}}</div>
 		</div>
 	</div>
 
-	<!-- HORISONTAL LINE -->
-	<div class="horisontal-line"></div>
+	<h3>Domestic or abroad?</h3>
 
 	<!-- DESTINATION -->
 	<div class="row remove-margin">
