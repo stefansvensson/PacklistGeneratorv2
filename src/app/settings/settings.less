@@ -2,8 +2,7 @@
 	margin-bottom: 5px; 
 	margin-top: 5px;
 	min-width: 300px;
-	padding: 20px 40px;
-	padding-top: 0px;
+	padding: 20px 40px 10px 40px;
 	background-color: rgba(0, 0, 0, @coverOverlayOpacity);
 	border-radius: @coverContainerBorderRadius;
 }
@@ -20,6 +19,23 @@
 
 .bottom-border{
 	border-bottom: 1px solid gray;
+	margin-bottom: 15px;
+}
+
+.settings-header{
+	color: gray;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+.settings-label{
+	color: gray;
+	padding-bottom: 5px;
+	font-size: 12px;
+}
+
+.white{
+	color: white;
 }
 
 /*HOVER-ICON EFFECT*/
@@ -27,7 +43,7 @@
 .hover-icon-container{
 	display: flex;
 	justify-content: center;
-	padding: 5px 0px 10px 0px;
+	padding: 5px 20px 10px 20px;
 }
 
 .hover-icon {
@@ -60,7 +76,7 @@
 	display: inline-block;
 	-webkit-mask-size: cover;
 	mask-size: cover;
-	background-color: white;
+	background-color: gray;
 }
 
 /* Effect 1 */
@@ -105,6 +121,51 @@
 	background-color: #009688;
 }
 
+.white-bckgrnd{
+	background-color: white;
+}
+
+/*BUTTON*/
+.btn-settings {
+	background-color: transparent;
+	border: 2px solid gray;
+	font-size: 18px;
+	float: right;
+	color: gray;
+	padding: 5px 15px;
+	border-radius: 4px;
+	margin-top: 10px;
+}
+
+a:hover,
+a:focus,
+.btn-settings:hover
+.btn-settings:focus{
+	color: gray;
+}
+
+.btn-white{
+	border-color: white;
+	color: #009688;
+	font-weight: 600;
+	background-color: white;
+}
+
+.btn-white:hover{
+	border-color: white;
+	color: #009688;
+}
+
+.circel-numeration{
+	border: 2px solid;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	margin-left: -30px;
+	text-align: center;
+	margin-top: -3px;
+}
 
 
 

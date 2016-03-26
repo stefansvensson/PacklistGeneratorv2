@@ -29,4 +29,18 @@ angular.module( 'ngBoilerplate.settings', [
   $http.get('assets/json/navButtons.json').success(function(data) {
     $scope.navButtons = data;
   });
+  
+
+  $scope.genderSelection='';
+  $scope.vacationSelection='';
+  $scope.destinationSelection='';
+/*  $scope.settingsProgress=0;*/
+
+  $scope.updateSettings=function(scopeVar,selection){
+/*    if(progress>$scope.settingsProgress){
+      $scope.settingsProgress = progress;
+    }*/
+
+    $scope[scopeVar] = selection;
+  };
 }]);

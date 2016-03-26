@@ -1,49 +1,65 @@
 <!-- SETTINGS.TPL.HTML -->
 <div class="cover-settings-container">
-
-	<h3>What is your gender?</h3>
-
+	
 	<!-- GENDER -->
+	<h3 class="settings-header white"><span class="circel-numeration">1</span> What is your gender?</h3>
 	<div class="row bottom-border">
-
-		<div class="col-sm-6" ng-repeat="x in navButtons.gender">
-
+		<div class="col-sm-6 remove-padding" ng-repeat="x in navButtons.gender">
 			<div class="hover-icon-container hover-icon-effect-1 hover-icon-effect-1a">
+				<div class="hover-icon" ng-class="{'hover-icon-selected': genderSelection==x.id}" ng-click="updateSettings('genderSelection',x.id)">
 
-				<div class="hover-icon" ng-class="{'hover-icon-selected': isMale==true}" ng-click="isMale=true">
-					<div class="hover-icon-inner" ng-class="{'hover-icon-inner-selected': isMale==true}" style="
-						-webkit-mask: url({{x.imageUrl}}) no-repeat 50% 50%;
-						mask: url({{x.imageUrl}}) no-repeat 50% 50%;
-						-webkit-mask-size: cover;
-  						mask-size: cover;
-						">
-					</div>
+					<div class="hover-icon-inner white-bckgrnd" ng-class="{'hover-icon-inner-selected': genderSelection==x.id}" style="
+					-webkit-mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+					mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+					-webkit-mask-size: cover;
+					mask-size: cover;
+					"></div>
+
 				</div>
-
-
 			</div>
-			<div class="centered">{{x.name}}</div>
+			<div class="settings-label centered white">{{x.name}}</div>
 		</div>
 	</div>
-
-	<h3>Type of vacation?</h3>
 
 	<!-- VACATIONS -->
-	<div class="row remove-margin bottom-border">
-		<div class="col-sm-3 centered remove-padding" ng-repeat="x in navButtons.vacations" style="border:0px solid white">
-			<img class="img-circle" ph-img="80x80" />
-			<div>{{x.name}}</div>
+	<h3 class="settings-header" ng-class="{'white':genderSelection!=''}"><span class="circel-numeration">2</span> Type of vacation?</h3>
+	<div class="row bottom-border">
+		<div class="col-sm-3 remove-padding" ng-repeat="x in navButtons.vacations">
+			<div class="hover-icon-container hover-icon-effect-1" ng-class="{'hover-icon-effect-1a':genderSelection!=''}">
+				<div class="hover-icon" ng-class="{'hover-icon-selected': vacationSelection==x.id}" ng-click="!genderSelection!=''||updateSettings('vacationSelection',x.id)">
+
+					<div class="hover-icon-inner" ng-class="{'white-bckgrnd':genderSelection!='','hover-icon-inner-selected': vacationSelection==x.id}" style="
+					-webkit-mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+					mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+					-webkit-mask-size: cover;
+					mask-size: cover;
+					"></div>
+
+				</div>
+			</div>
+			<div class="settings-label centered" ng-class="{'white':genderSelection!=''}">{{x.name}}</div>
 		</div>
 	</div>
-
-	<h3>Domestic or abroad?</h3>
 
 	<!-- DESTINATION -->
-	<div class="row remove-margin">
-		<div class="col-sm-6 centered" ng-repeat="x in navButtons.destinations" style="border:0px solid white">
-			<img class="img-circle" ph-img="80x80" />
-			<div>{{x.name}}</div>
+	<h3 class="settings-header" ng-class="{'white':vacationSelection!=''}"><span class="circel-numeration">3</span> Domestic or abroad?</h3>
+	<div class="row">
+		<div class="col-sm-6 remove-padding" ng-repeat="x in navButtons.destinations">
+			<div class="hover-icon-container hover-icon-effect-1" ng-class="{'hover-icon-effect-1a':vacationSelection!=''}">
+				<div class="hover-icon" ng-class="{'hover-icon-selected': destinationSelection==x.id}" ng-click="!vacationSelection!=''||updateSettings('destinationSelection',x.id)">
+
+					<div class="hover-icon-inner" ng-class="{'white-bckgrnd':vacationSelection!='','hover-icon-inner-selected': destinationSelection==x.id}" style="
+					-webkit-mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+					mask: url({{x.imageUrl}}) no-repeat 50% 50%;
+					-webkit-mask-size: cover;
+					mask-size: cover;
+					"></div>
+
+				</div>
+			</div>
+			<div class="settings-label centered" ng-class="{'white':vacationSelection!=''}">{{x.name}}</div>
 		</div>
 	</div>
+	<p class="lead"><a ui-sref="settings" class="btn-settings" ng-class="{'btn-white':destinationSelection!=''}">Create Packlist</a></p>
 
 </div>
