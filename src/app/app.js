@@ -6,6 +6,8 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.flex',
   'ngBoilerplate.start',
   'ngBoilerplate.settings',
+  'ngBoilerplate.packlists',
+  'AwesomeFilters',
   'ui.router'
 ])
 

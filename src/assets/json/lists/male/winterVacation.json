@@ -1,0 +1,22 @@
+{
+    "description":"Winter Vacation",
+    "clothes":[
+        {"item": "byxor", "done":false, "flag":true},
+        {"item": "tröja", "done":false, "flag":false},
+        {"item": "strumpor", "done":false, "flag":false}
+    ],  
+    "gadgets":[ 
+        {"item": "mobil", "done":false},
+        {"item": "iPad", "done":false},
+        {"item": "laddare", "done":false}
+    ],  
+    "toiletries":[  
+        {"item": "alvedon", "done":false},
+        {"item": "tandborste", "done":false},
+        {"item": "tvål", "done":false}
+    ],
+    "rememberTo":[  
+        {"item": "betala räkningar", "done":false},
+        {"item": "släck ljusen", "done":false}
+    ]
+}

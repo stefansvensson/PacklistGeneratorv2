@@ -1,0 +1,17 @@
+<!-- SETTINGS.TPL.HTML -->
+<div class="cover-packlists-container">
+	
+	
+	<!-- CLOTHES -->
+	<div class="col-md-3">
+		<div ng-repeat="x in packlist.clothes">
+
+			<!-- CHECKBOX & LABEL -->
+			<input type="checkbox" id="{{x.item}}" ng-model="x.done">
+			<label for="{{x.item}}"> {{x.item | capitalize}}</label>
+
+
+		</div>
+	</div>
+
+</div>

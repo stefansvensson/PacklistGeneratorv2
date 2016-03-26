@@ -12,12 +12,12 @@
     },
     {
         "id": "cityweekend",
-        "imageUrl": "assets/icons/city-weekend.svg",
+        "imageUrl": "assets/icons/city.svg",
         "name": "City Weekend"
     },
     {
         "id": "emptylist",
-        "imageUrl": "assets/icons/emptylist.svg",
+        "imageUrl": "assets/icons/empty.svg",
         "name": "Empty List"
     }
   ],
@@ -36,12 +36,12 @@
     "destinations": [
     {
         "id": "domestic",
-        "imageUrl": "assets/icons/male.svg",
+        "imageUrl": "assets/icons/domestic.svg",
         "name": "Domestic Travel"
     },
     {
         "id": "international",
-        "imageUrl": "assets/icons/female.svg",
+        "imageUrl": "assets/icons/international.svg",
         "name": "International Travel"
     }
   ]

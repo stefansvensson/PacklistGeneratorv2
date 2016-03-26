@@ -43,7 +43,7 @@
 
 	<!-- DESTINATION -->
 	<h3 class="settings-header" ng-class="{'white':vacationSelection!=''}"><span class="circel-numeration">3</span> Domestic or abroad?</h3>
-	<div class="row">
+	<div class="row bottom-border">
 		<div class="col-sm-6 remove-padding" ng-repeat="x in navButtons.destinations">
 			<div class="hover-icon-container hover-icon-effect-1" ng-class="{'hover-icon-effect-1a':vacationSelection!=''}">
 				<div class="hover-icon" ng-class="{'hover-icon-selected': destinationSelection==x.id}" ng-click="!vacationSelection!=''||updateSettings('destinationSelection',x.id)">
@@ -60,6 +60,8 @@
 			<div class="settings-label centered" ng-class="{'white':vacationSelection!=''}">{{x.name}}</div>
 		</div>
 	</div>
-	<p class="lead"><a ui-sref="settings" class="btn-settings" ng-class="{'btn-white':destinationSelection!=''}">Generate Packlist</a></p>
+	<p class="lead"><button ng-disabled="destinationSelection==''" ui-sref="packlists({gender:genderSelection, vacation:vacationSelection})" class="btn-settings" ng-class="{'btn-white':destinationSelection!=''}">Generate Packlist</button></p>
+
+	<!-- <a ui-sref="contacts.detail({contactId: id})">View Contact</a> -->
 
 </div>
