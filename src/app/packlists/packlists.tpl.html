@@ -3,15 +3,24 @@
 	
 	
 	<!-- CLOTHES -->
-	<div class="col-md-3">
+	<div class="col-md-3 no-padding">
 		<div ng-repeat="x in packlist.clothes">
 
 			<!-- CHECKBOX & LABEL -->
 			<input type="checkbox" id="{{x.item}}" ng-model="x.done">
-			<label for="{{x.item}}"> {{x.item | capitalize}}</label>
-
+			<label for="{{x.item}}"> 
+				<span class="packlist-label">{{x.item | capitalize}}</span>
+			</label>
 
 		</div>
+
+		<!-- ADD ITEM -->
+		<form class="list-item-input" autocomplete="off"> 
+			<input ng-model="clothesInput" class="input-field input-field--haruki" type="text" id="input-1" />
+			<label id="topBorderInput" class="input__label input__label--haruki" for="input-1">
+				<span class="input__label-content input__label-content--haruki">Add New Item</span>
+			</label>
+		</form>
 	</div>
 
 </div>

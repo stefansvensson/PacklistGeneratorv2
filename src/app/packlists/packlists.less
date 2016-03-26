@@ -12,7 +12,7 @@
 	border: 1px solid yellow;
 }
 
-/* CHECKBOXES 
+/* LABEL + CHECKBOXES 
 ============================================================================= 
 */
 
@@ -20,10 +20,16 @@ label {
 	background:transparent;
 	position: relative;
 	cursor: pointer;
-	padding-left: 25px;
-	width: 80%;
 	word-wrap: break-word;
-	margin-bottom: 0px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+
+label .ng-binding{
+	margin-left:25px;
+	font-weight: 100;
 }
 
 label:before {
@@ -35,7 +41,6 @@ label:before {
 	left: 0rem;
 	width: 20px;
 	height: 20px;
-	/*border: 3px solid #f2f2f2;*/
 	border: 1px solid white;
 	border-radius: 3px;
 }
@@ -77,233 +82,139 @@ input:checked + label:after {
 	left:-9999px;
 }
 
+/* ADD NEW ITEM FORM
+============================================================================= 
+*/
 
-.animate-repeat:hover .list-item-btns{
-	display:inline;
-}
-
-.animate-repeat:hover input:not(:checked) + label{
-	font-weight: bold;
-	font-size: 15px;
-}
-
-#packlist-buttons-container{
+/*container*/
+.list-item-input {
+	width: 95%;
+	position: relative;
+	z-index: 1;
 	display: inline-block;
-	width: 100%;
-	text-align: left;
-
-	margin-bottom: 15px;
-} 
-
-#packlist-buttons-container > ul{
-	margin-bottom: 0px;
-	padding-left: 0px;
-} 
-
-#list-wrapper{
-	padding-right: 0;
-	padding-left: 0;
-}
-
-#packlist-buttons-filter {
-	float: left;
-	cursor: pointer;
-	padding-left: 0px;
-}
-
-#packlist-buttons-filter > li{
-	display: inline;
-}
-
-#packlist-buttons-filter > li + li{
-	margin-left: 0px;
-}
-
-#packlist-buttons-filter > li > a {
-	padding-right: 3px;
-	padding-left: 3px;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	font-size: 14px;
-	color: rgba(255,255,255,.5);
-	border: 1px solid transparent;
-	text-decoration: none;
-}
-
-#packlist-buttons-filter > li > a:hover,
-#packlist-buttons-filter > li > a.selected {
-	border-color: rgba(255,255,255,.5);
-}
-#packlist-buttons-filter > li > a.selected{
-	border-color: white;
-	color: white;
-}
-
-#packlist-buttons-clear{
-	float: right;
-	list-style: none;
-	cursor: pointer;
-	margin-left: 3px;
-	margin-right: 3px;
-}
-
-#packlist-buttons-clear > li > a {
-	padding-right: 3px;
-	padding-left: 3px;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	font-size: 14px;
-	color: white;
-	text-decoration: none;
-}
-
-.list-item-container{
-	border:red solid 0px;
-	text-align: left;
-	background: transparent;
-}
-
-.checkbox-container{
-	display: inline-block;
-	border:solid yellow 0px;
-	width: 20px;
-	height: 20px;
-}
-
-.label-container{
-	display: inline-block;
-	padding-left: 10px;
-	height: 20px;
-	position: absolute;
-	width: 100%;
-}
-
-label .ng-binding{
-	margin-top: 0px;
-	margin-left:10px;
-	margin-bottom: 0px;
-}
-
-.ng-binding{
-	font-weight: 100;
-	padding-bottom: 5px;
-}
-
-.h-li{
-	font-weight: bold;
-	font-size: 18px;
 	margin-top: 10px;
 }
 
-.wrapper {
-	width: 960px;
-	margin: 50px auto;
+
+.input-field {
+	float: right;
+	border: none;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+	margin-top: -3px;
 }
 
-input:focus, input[type]:focus {   
-	box-shadow: 0 0px 0px inset, 0 0 0px;
-	outline: 0 none;
-}
-
-.col-md-3{
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-/*
-input[type="text"]
-{
+.input-field--haruki {
+	padding: 0.3em 0.25em;
+	padding-left: 15px;
+	width: 100%;
 	background: transparent;
-	border: 1px solid gray;
-	height: 30px;
-	width: 96%;
-	border-radius: 3px;
 	color: white;
-	padding-left: 5px;
-}
-*/
 
-::-webkit-input-placeholder {
+}
+
+/*.input--haruki {
+	margin-top: 10px;
+	margin-left: 0;
+	float: left;
+}*/
+
+
+/* Component Start */
+
+/* To change color of top border */
+/*#topBorderInput::before{
+	border-top: 1px solid rgba(105,105,105,.3);
+}*/
+
+
+
+
+.input-field:focus {
+	outline: none;
+}
+
+.input__label {
+	padding: 0 1em;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	display: block;
+	padding: .3em 0;
+	font-weight: normal;
+	color: gray;
 	font-style: italic;
 }
-.ng-valid{
+
+/* Individual styles */
+
+/* Haruki */
+
+
+
+
+
+.input__label--haruki {
+	position: absolute;
+	width: 100%;
 	text-align: left;
+	pointer-events: none;
 }
 
-.packlist-btn{
-	text-decoration: none;
-	background: transparent;
-	color: white;
-	border-radius: 3px;
+.input__label-content--haruki {
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
 }
 
-.packlist-btn.selected,
-.clear {
-	border: solid 1px white;
-}
-
-#filters li {
-	display: inline;
-}
-
-#filters li a {
-	color: inherit;
-	margin: 3px;
-	padding: 3px 7px;
-	text-decoration: none;
-	border: 1px solid transparent;
-	border-radius: 3px;
-}
-
-#filters li a.selected,
-#filters li a:hover {
-	border-color: rgba(175, 47, 47, 0.1);
-}
-
-#filters li a.selected {
-	border-color: rgba(175, 47, 47, 0.2);
-}
-
-#background-image-container{
+.input__label--haruki::before,
+.input__label--haruki::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	z-index: -1;
 	width: 100%;
-	height: 100%;
-	background-image:url("img/cover3.jpg");
-	background-position: 50%, 50%;
-	background-size: cover;
+	height: 1px;
+	border-width: 0px;
+	border-top: 1px solid rgba(105,105,105,.3);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
 }
 
-#overlay{
-	width: 100%;
-	height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.input__label--haruki::before {
+	top: 0;
 }
 
-.thin {
-    font-weight: 200;
+.input__label--haruki::after {
+	margin-top: 20px;
 }
 
-.awesome {
-    clear: both;
-    line-height: 1.8;
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 0px;
+.input-field--haruki:focus + .input__label--haruki .input__label-content--haruki,
+.input--filled .input__label-content--haruki {
+	-webkit-transform: translate3d(0, 110%, 0);
+	transform: translate3d(0, 110%, 0);
 }
 
-#awesome-cover{
-	font-size: 55px;
+.input-field--haruki:focus + .input__label--haruki::before,
+.input--filled .input__label--haruki::before {
+	-webkit-transform: translate3d(0, -0.3em, 0);
+	transform: translate3d(0, -0.3em, 0);
 }
 
-.awesome-nav{
-	font-size: 32px;
+.input-field--haruki:focus + .input__label--haruki::after,
+.input--filled .input__label--haruki::after {
+	-webkit-transform: translate3d(0, 0.3em, 0);
+	transform: translate3d(0, 0.3em, 0);
 }
 
-#warning-Msg{
-	color:darkred;
-	height: 30px;
-	margin-top: -30px;
-	padding-top: 5px;
-	font-weight: bolder;
+.input--filled {
+	opacity: 1;
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
 }
 
 
@@ -311,4 +222,6 @@ input[type="text"]
 
 
 
- 
+
+
+
