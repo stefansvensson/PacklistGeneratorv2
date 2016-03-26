@@ -1,3 +1,6 @@
+
+@disabledOpacity:0.4;
+
 .cover-settings-container{
 	margin-bottom: 5px; 
 	margin-top: 5px;
@@ -18,18 +21,18 @@
 }
 
 .bottom-border{
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgba(128,128,128,@disabledOpacity);
 	margin-bottom: 15px;
 }
 
 .settings-header{
-	color: gray;
+	color: rgba(128,128,128,@disabledOpacity);;
 	margin-top: 10px;
 	margin-left: 30px;
 }
 
 .settings-label{
-	color: gray;
+	color: rgba(128,128,128,@disabledOpacity);;
 	padding-bottom: 5px;
 	font-size: 12px;
 }
@@ -76,7 +79,7 @@
 	display: inline-block;
 	-webkit-mask-size: cover;
 	mask-size: cover;
-	background-color: gray;
+	background-color: rgba(128,128,128,@disabledOpacity);;
 }
 
 /* Effect 1 */
@@ -128,20 +131,18 @@
 /*BUTTON*/
 .btn-settings {
 	background-color: transparent;
-	border: 2px solid gray;
-	font-size: 18px;
+	border: 2px solid rgba(128,128,128,@disabledOpacity);
+	font-size: 16px;
 	float: right;
 	color: gray;
-	padding: 5px 15px;
+	padding: 5px 10px;
 	border-radius: 4px;
 	margin-top: 10px;
 }
 
-a:hover,
-a:focus,
 .btn-settings:hover
 .btn-settings:focus{
-	color: gray;
+	color: rgba(128,128,128,@disabledOpacity);
 }
 
 .btn-white{
