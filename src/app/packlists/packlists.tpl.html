@@ -1,7 +1,7 @@
 <!-- SETTINGS.TPL.HTML -->
 <div class="cover-packlists-container">
 	
-	
+	<div data-ng-show="duplicateFound" ng-class="{fade:doFade}" id="warning-Msg">Error: Item already in list</div>
 	<!-- CLOTHES -->
 	<div class="col-md-3 no-padding">
 		<div ng-repeat="x in packlist.clothes">
@@ -15,10 +15,10 @@
 		</div>
 
 		<!-- ADD ITEM -->
-		<form class="list-item-input" autocomplete="off"> 
-			<input ng-model="clothesInput" class="input-field input-field--haruki" type="text" id="input-1" />
-			<label id="topBorderInput" class="input__label input__label--haruki" for="input-1">
-				<span class="input__label-content input__label-content--haruki">Add New Item</span>
+		<form ng-class="{'input-filled': clothesInput}" ng-submit="addItem('clothesInput','clothes')" class="list-item-input" autocomplete="off" > 
+			<input ng-model="clothesInput" class="input-field" type="text" id="input-1" />
+			<label  class="input-label" for="input-1">
+				<span class="input-label-placeholder">Add New Item</span>
 			</label>
 		</form>
 	</div>

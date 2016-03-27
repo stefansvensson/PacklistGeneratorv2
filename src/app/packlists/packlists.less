@@ -86,7 +86,7 @@ input:checked + label:after {
 ============================================================================= 
 */
 
-/*container*/
+/* main container*/
 .list-item-input {
 	width: 95%;
 	position: relative;
@@ -95,45 +95,24 @@ input:checked + label:after {
 	margin-top: 10px;
 }
 
-
 .input-field {
 	float: right;
 	border: none;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
-	margin-top: -3px;
-}
-
-.input-field--haruki {
+	margin-top: -5px;
 	padding: 0.3em 0.25em;
-	padding-left: 15px;
+	padding-left: 1em;
 	width: 100%;
 	background: transparent;
 	color: white;
-
 }
-
-/*.input--haruki {
-	margin-top: 10px;
-	margin-left: 0;
-	float: left;
-}*/
-
-
-/* Component Start */
-
-/* To change color of top border */
-/*#topBorderInput::before{
-	border-top: 1px solid rgba(105,105,105,.3);
-}*/
-
-
-
 
 .input-field:focus {
 	outline: none;
 }
 
-.input__label {
+/*where the user type in the actual input*/
+.input-label {
 	padding: 0 1em;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -141,38 +120,16 @@ input:checked + label:after {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
 
-.input__label-content {
-	display: block;
-	padding: .3em 0;
-	font-weight: normal;
-	color: gray;
-	font-style: italic;
-}
-
-/* Individual styles */
-
-/* Haruki */
-
-
-
-
-
-.input__label--haruki {
 	position: absolute;
 	width: 100%;
 	text-align: left;
 	pointer-events: none;
 }
 
-.input__label-content--haruki {
-	-webkit-transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
-}
-
-.input__label--haruki::before,
-.input__label--haruki::after {
+/*the top and bottom border lines*/
+.input-label::before,
+.input-label::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -180,42 +137,70 @@ input:checked + label:after {
 	width: 100%;
 	height: 1px;
 	border-width: 0px;
-	border-top: 1px solid rgba(105,105,105,.3);
+	border-top: 1px solid rgba(105,105,105,.6);
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
 }
 
-.input__label--haruki::before {
+.input-label::before {
 	top: 0;
 }
 
-.input__label--haruki::after {
-	margin-top: 20px;
+.input-label::after {
+	margin-top: 22px;
 }
 
-.input-field--haruki:focus + .input__label--haruki .input__label-content--haruki,
-.input--filled .input__label-content--haruki {
-	-webkit-transform: translate3d(0, 110%, 0);
-	transform: translate3d(0, 110%, 0);
-}
-
-.input-field--haruki:focus + .input__label--haruki::before,
-.input--filled .input__label--haruki::before {
-	-webkit-transform: translate3d(0, -0.3em, 0);
-	transform: translate3d(0, -0.3em, 0);
-}
-
-.input-field--haruki:focus + .input__label--haruki::after,
-.input--filled .input__label--haruki::after {
-	-webkit-transform: translate3d(0, 0.3em, 0);
-	transform: translate3d(0, 0.3em, 0);
-}
-
-.input--filled {
+/*class to be added when input field contains text
+prevents the placeholder text to return to initial position*/
+.input-filled {
 	opacity: 1;
 	-webkit-transition-delay: 0.3s;
 	transition-delay: 0.3s;
 }
+
+/*move top border line upwards*/
+.input-field:focus + .input-label::before,
+.input-filled .input-label::before { 
+	-webkit-transform: translate3d(0, -0.3em, 0);
+	transform: translate3d(0, -0.3em, 0);
+}
+
+/*move bottom border line downwards*/
+.input-field:focus + .input-label::after,
+.input-filled .input-label::after {
+	-webkit-transform: translate3d(0, 0.3em, 0);
+	transform: translate3d(0, 0.3em, 0);
+}
+
+/*the placeholder text "add new item"*/
+.input-label-placeholder {
+	display: block;
+	padding: .3em 0;
+	font-weight: normal;
+	color: gray;
+	font-style: italic;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+/*move the placeholder text downwards when input box focused*/
+.input-field:focus + .input-label .input-label-placeholder,
+.input-filled .input-label-placeholder {
+	-webkit-transform: translate3d(0, 70%, 0);
+	transform: translate3d(0, 70%, 0);
+}
+
+#warning-Msg{
+	color:darkred;
+	font-weight: bolder;
+	text-align: center;
+}
+
+
+
+
+
+
 
 
 
