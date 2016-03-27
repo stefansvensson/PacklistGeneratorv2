@@ -19,15 +19,3 @@ AwesomeFilters.filter('capitalize', function() {
     }
   };
 });
-
-AwesomeFilters.filter('statusFilter', function(){
-  return function(input,scope){
-    var out = [];
-    angular.forEach(input, function(item){
-      if(item.done === filterStatus.status){
-        out.push(item);
-      }
-    });
-    return out;
-  };
-});

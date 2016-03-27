@@ -92,7 +92,7 @@ input:checked + label:after {
 	position: relative;
 	z-index: 1;
 	display: inline-block;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 .input-field {
@@ -196,8 +196,77 @@ prevents the placeholder text to return to initial position*/
 	text-align: center;
 }
 
+/* LIST HEADERS
+============================================================================= 
+*/
 
+.list-header-container{
+	border-bottom: 1px solid gray;
+	margin-bottom: 5px;
+	width: 95%;
+}
 
+.list-header{
+	margin-left: 25px;
+	font-size: 18px;
+	font-weight: bold;
+	height: 20px;
+	margin-top: -10px;
+}
+
+/* PACKLIST FILTERS
+============================================================================= 
+*/
+
+.packlist-filter-container{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.packlist-filters-left{
+	text-align: left;
+	flex: 1;
+}
+
+.packlist-filters-center{
+	flex: 1;
+	text-align: center;
+}
+
+.packlist-filters-right{
+	flex: 1;
+	text-align: right;
+}
+
+.packlist-btn{
+	color: gray;
+	margin-right: 5px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 2px 5px;
+}
+
+.packlist-btn:hover{
+	border-color: gray;
+	color: gray;
+}
+
+.clear-btn{
+	margin-right: 0px;
+}
+
+.packlist-btn-selected,
+.packlist-btn-selected:hover,
+.clear-btn,
+.clear-btn:hover {
+	border-color: white;
+	color: white;
+}
 
 
 

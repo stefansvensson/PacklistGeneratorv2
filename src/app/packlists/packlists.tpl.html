@@ -1,13 +1,64 @@
 <!-- SETTINGS.TPL.HTML -->
 <div class="cover-packlists-container">
 	
-	<div data-ng-show="duplicateFound" ng-class="{fade:doFade}" id="warning-Msg">Error: Item already in list</div>
+	<!-- FILTERS -->
+	<div class="packlist-filter-container">
+		
+		<!-- LEFT -->
+		<div class="packlist-filters-left">
+			<a ng-click="changeItemStatus()" class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===''}" >All</a>
+			<a ng-click="changeItemStatus(false)" class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===false}" >Active</a>
+			<a ng-click="changeItemStatus(true)" class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===true}" >Completed</a>
+		</div>
+		
+		<!-- CENTER -->
+		<div class="packlist-filters-center">
+			<div data-ng-show="duplicateFound" ng-class="{fade:doFade}" id="warning-Msg">Error: Item already in list</div>
+		</div>
+
+		<div class="packlist-filters-right">
+			<a ng-click="clearCompleted()" class="packlist-btn clear-btn">Clear Completed</a>
+		</div>
+		
+		<!-- <ul id="packlist-buttons-clear">
+					<li><a ng-click="clearCompleted()" class="packlist-btn clear">Clear Completed</a></li>
+				</ul> -->
+
+	</div>
+	{{itemFilter}}
+	
+				<!-- <ul id="packlist-buttons-filter">
+					<li><a ng-click="changeItemStatus()" ng-class="{selected: itemFilter===''}" class="packlist-btn">All</a></li>
+					<li><a ng-click="changeItemStatus(false)" ng-class="{selected: itemFilter===false}" class="packlist-btn">Active</a></li>
+					<li><a ng-click="changeItemStatus(true)" ng-class="{selected: itemFilter===true}" class="packlist-btn">Completed</a></li>
+					<li><a ng-click="flagFilter=!flagFilter" ng-class="{selected: flagFilter}" class="packlist-btn">Essentials</a></li>
+				</ul>
+
+				<ul id="packlist-buttons-clear">
+					<li><a ng-click="clearCompleted()" class="packlist-btn clear">Clear Completed</a></li>
+				</ul> -->
+
+
+	
+
 	<!-- CLOTHES -->
 	<div class="col-md-3 no-padding">
-		<div ng-repeat="x in packlist.clothes">
+		
+		<!-- CHECK ALL -->
+		<div class="list-header-container">
+			<input type="checkbox" id="checkAll.clothes" ng-model="checkAll.clothes" ng-change="completeAll(checkAll.clothes,'clothes')">
+			<label for="checkAll.clothes"> 
+				<span class="list-header">Clothes ({{packlist.clothes.length - completedCounter.clothes}})</span>
+			</label>
+		</div>
+		
+		<!-- <div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
+
+		<!-- NG-REPEAT -->
+		<div ng-repeat="x in packlist.clothes | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}">
 
 			<!-- CHECKBOX & LABEL -->
-			<input type="checkbox" id="{{x.item}}" ng-model="x.done">
+			<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
 			<label for="{{x.item}}"> 
 				<span class="packlist-label">{{x.item | capitalize}}</span>
 			</label>
@@ -21,6 +72,6 @@
 				<span class="input-label-placeholder">Add New Item</span>
 			</label>
 		</form>
-	</div>
 
+	</div>
 </div>
