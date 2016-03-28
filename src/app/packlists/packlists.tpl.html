@@ -6,15 +6,12 @@
 		
 		<!-- LEFT -->
 		<div class="packlist-filters-left">
-
 			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===''}">
 				<a ng-click="changeItemStatus()" class="packlist-btn-label" >All</a>
 			</div>
-
 			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===false}">
 				<a ng-click="changeItemStatus(false)" class="packlist-btn-label">Active</a>
 			</div>
-
 			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===true}">
 				<a ng-click="changeItemStatus(true)" class="packlist-btn-label">Completed</a>
 			</div>
@@ -27,43 +24,21 @@
 		
 		<!-- RIGHT -->
 		<div class="packlist-filters-right">
-
 			<form class="search-input" autocomplete="off" ng-class="{'input-filled': searchQuery}"> 
 				<input ng-model="searchQuery" class="search-input-field" type="text" id="input-1" />
-
 				<div ng-class="{'top-left-right-borders-after': searchQuery}" class="top-left-right-borders">
 					<label  class="search-input-label" for="input-1">
 						<span class="search-input-label-placeholder">Search</span>
 					</label>
 					<div ng-class="{'search-border-bottom-after': searchQuery}" class="search-border-bottom"></div>
 				</div>
-				
 			</form>
 
 			<div class="packlist-btn clear-btn" ng-class="{'packlist-btn-selected': itemFilter===true}">
-				<a ng-click="clearCompleted()" class="clear-btn-label">Completed</a>
+				<a ng-click="clearCompleted()" class="clear-btn-label">Clear Completed</a>
 			</div>
-
 		</div>
-
-
-		
-		<!-- <ul id="packlist-buttons-clear">
-					<li><a ng-click="clearCompleted()" class="packlist-btn clear">Clear Completed</a></li>
-				</ul> -->
-
 	</div>
-	
-				<!-- <ul id="packlist-buttons-filter">
-					<li><a ng-click="changeItemStatus()" ng-class="{selected: itemFilter===''}" class="packlist-btn">All</a></li>
-					<li><a ng-click="changeItemStatus(false)" ng-class="{selected: itemFilter===false}" class="packlist-btn">Active</a></li>
-					<li><a ng-click="changeItemStatus(true)" ng-class="{selected: itemFilter===true}" class="packlist-btn">Completed</a></li>
-					<li><a ng-click="flagFilter=!flagFilter" ng-class="{selected: flagFilter}" class="packlist-btn">Essentials</a></li>
-				</ul>
-
-				<ul id="packlist-buttons-clear">
-					<li><a ng-click="clearCompleted()" class="packlist-btn clear">Clear Completed</a></li>
-				</ul> -->
 
 
 	
@@ -82,7 +57,7 @@
 		<!-- <div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
 
 		<!-- NG-REPEAT -->
-		<div ng-repeat="x in packlist.clothes | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}">
+		<div ng-repeat="x in packlist.clothes | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="animate-repeat">
 
 			<!-- CHECKBOX & LABEL -->
 			<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">

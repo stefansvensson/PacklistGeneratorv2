@@ -8,7 +8,8 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.settings',
   'ngBoilerplate.packlists',
   'AwesomeFilters',
-  'ui.router'
+  'ui.router',
+  'ngAnimate'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
