@@ -23,7 +23,7 @@ angular.module( 'ngBoilerplate.packlists', [
     });
 })
 
-.controller( 'PacklistsCtrl', ['$scope', '$http', '$stateParams', '$timeout', function PacklistsCtrl( $scope, $http, $stateParams, $timeout ) {
+.controller( 'PacklistsCtrl', ['$scope', '$http', '$stateParams', '$timeout', 'destinationService', function PacklistsCtrl( $scope, $http, $stateParams, $timeout, destinationService ) {
 
     /* PACKLIST JSON OBJECT */
     $http.get('assets/json/lists/' + $stateParams.gender + '/' + $stateParams.vacation + '.json').success(function(data) {
@@ -157,6 +157,17 @@ angular.module( 'ngBoilerplate.packlists', [
 
     $scope.deleteSingleItem = function(item,list){
             $scope.packlist[list].splice($scope.packlist[list].indexOf(item),1);
-        };
+    };
 
+    //filter on destination (international or domestic travel)
+    $scope.abroadFilter = destinationService.isAbroad();
+    $scope.destinationFilter = function(item) {
+        if ($scope.abroadFilter==='') {
+            return item;
+        }else{
+            if(item.abroad===$scope.abroadFilter){
+                return item;
+            }
+        }
+    };
 }]);

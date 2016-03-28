@@ -23,24 +23,20 @@ angular.module( 'ngBoilerplate.settings', [
   });
 })
 
-.controller( 'SettingsCtrl', ['$scope', '$http', function SettingsCtrl( $scope, $http ) {
+.controller( 'SettingsCtrl', ['$scope', '$http', 'destinationService', function SettingsCtrl( $scope, $http, destinationService) {
   
   /*NAVBUTTONS JSON OBJECT*/
   $http.get('assets/json/navButtons.json').success(function(data) {
     $scope.navButtons = data;
   });
   
-
   $scope.genderSelection='';
   $scope.vacationSelection='';
   $scope.destinationSelection='';
-/*  $scope.settingsProgress=0;*/
 
   $scope.updateSettings=function(scopeVar,selection){
-/*    if(progress>$scope.settingsProgress){
-      $scope.settingsProgress = progress;
-    }*/
-
     $scope[scopeVar] = selection;
+    destinationService.updateDestination(selection);
   };
+
 }]);

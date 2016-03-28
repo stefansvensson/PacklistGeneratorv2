@@ -1,6 +1,5 @@
 <!-- SETTINGS.TPL.HTML -->
 <div class="cover-packlists-container">
-	
 	<!-- FILTERS -->
 	<div class="packlist-filter-container">
 		
@@ -43,11 +42,10 @@
 		</div>
 	</div>
 
-
-	
-
-	<!-- CLOTHES -->
-	<div class="col-md-3 no-padding">
+	<!-- ====================================================== -->
+		<!-- CLOTHES -->
+	<!-- ====================================================== -->
+	<div class="col-sm-3 no-padding">
 		
 		<!-- CHECK ALL -->
 		<div class="list-header-container">
@@ -56,11 +54,9 @@
 				<span class="list-header">Clothes ({{packlist.clothes.length - completedCounter.clothes}})</span>
 			</label>
 		</div>
-		
-		<!-- <div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
 
 		<!-- NG-REPEAT -->
-		<div ng-repeat="x in packlist.clothes | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+		<div ng-repeat="x in clothesFiltered =(packlist.clothes | filter:destinationFilter) | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 			<!-- CHECKBOX & LABEL -->
 			<div class="packlist-label-container">
@@ -90,6 +86,144 @@
 				<span class="input-label-placeholder">Add New Item</span>
 			</label>
 		</form>
+	</div> <!-- END OF SUBLIST -->
 
-	</div>
+	<!-- ====================================================== -->
+		<!-- TOILETRIES -->
+	<!-- ====================================================== -->
+	<div class="col-sm-3 no-padding">
+		
+		<!-- CHECK ALL -->
+		<div class="list-header-container">
+			<input type="checkbox" id="checkAll.toiletries" ng-model="checkAll.toiletries" ng-change="completeAll(checkAll.toiletries,'toiletries')">
+			<label for="checkAll.toiletries"> 
+				<span class="list-header">Toiletries ({{packlist.toiletries.length - completedCounter.toiletries}})</span>
+			</label>
+		</div>
+
+		<!-- NG-REPEAT -->
+		<div ng-repeat="x in toiletriesFiltered =(packlist.toiletries | filter:destinationFilter) | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+
+			<!-- CHECKBOX & LABEL -->
+			<div class="packlist-label-container">
+				<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'toiletries')">
+				<label for="{{x.item}}"> 
+					<span class="packlist-label">{{x.item | capitalize}}</span>
+				</label>
+			</div>
+
+			<!-- FLAG -->
+			<span ng-show="x.flag==true || hover==true" ng-click="x.flag=!x.flag" class="list-item-btns flag">
+				<span ng-show="x.flag"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+				<span ng-show="!x.flag&&hover"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+			</span>
+
+			<!--  DELETE -->
+			<span ng-click="deleteSingleItem(x,'toiletries')" class="list-item-btns delete">
+				<i class="ion-close-round"></i>
+			</span>
+
+		</div>
+
+		<!-- ADD ITEM -->
+		<form ng-class="{'input-filled': toiletriesInput}" ng-submit="addItem('toiletriesInput','toiletries')" class="list-item-input" autocomplete="off" > 
+			<input ng-model="toiletriesInput" class="input-field" type="text" id="input-1" />
+			<label  class="input-label" for="input-1">
+				<span class="input-label-placeholder">Add New Item</span>
+			</label>
+		</form>
+	</div> <!-- END OF SUBLIST -->
+
+	<!-- ====================================================== -->
+		<!-- Gadgets -->
+	<!-- ====================================================== -->
+	<div class="col-sm-3 no-padding">
+		
+		<!-- CHECK ALL -->
+		<div class="list-header-container">
+			<input type="checkbox" id="checkAll.gadgets" ng-model="checkAll.gadgets" ng-change="completeAll(checkAll.gadgets,'gadgets')">
+			<label for="checkAll.gadgets"> 
+				<span class="list-header">Gadgets ({{gadgetsFiltered.length - completedCounter.gadgets}})</span>
+			</label>
+		</div>
+
+		<!-- NG-REPEAT -->
+		<div ng-repeat="x in gadgetsFiltered =(packlist.gadgets | filter:destinationFilter) | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+
+			<!-- CHECKBOX & LABEL -->
+			<div class="packlist-label-container">
+				<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'gadgets')">
+				<label for="{{x.item}}"> 
+					<span class="packlist-label">{{x.item | capitalize}}</span>
+				</label>
+			</div>
+
+			<!-- FLAG -->
+			<span ng-show="x.flag==true || hover==true" ng-click="x.flag=!x.flag" class="list-item-btns flag">
+				<span ng-show="x.flag"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+				<span ng-show="!x.flag&&hover"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+			</span>
+
+			<!--  DELETE -->
+			<span ng-click="deleteSingleItem(x,'gadgets')" class="list-item-btns delete">
+				<i class="ion-close-round"></i>
+			</span>
+
+		</div>
+
+		<!-- ADD ITEM -->
+		<form ng-class="{'input-filled': gadgetsInput}" ng-submit="addItem('gadgetsInput','gadgets')" class="list-item-input" autocomplete="off" > 
+			<input ng-model="gadgetsInput" class="input-field" type="text" id="input-1" />
+			<label  class="input-label" for="input-1">
+				<span class="input-label-placeholder">Add New Item</span>
+			</label>
+		</form>
+	</div> <!-- END OF SUBLIST -->
+
+	<!-- ====================================================== -->
+		<!-- Remember To -->
+	<!-- ====================================================== -->
+	<div class="col-sm-3 no-padding">
+		
+		<!-- CHECK ALL -->
+		<div class="list-header-container">
+			<input type="checkbox" id="checkAll.rememberTo" ng-model="checkAll.rememberTo" ng-change="completeAll(checkAll.rememberTo,'rememberTo')">
+			<label for="checkAll.rememberTo"> 
+				<span class="list-header">Remember To ({{packlist.rememberTo.length - completedCounter.rememberTo}})</span>
+			</label>
+		</div>
+
+		<!-- NG-REPEAT -->
+		<div ng-repeat="x in rememberToFiltered =(packlist.rememberTo | filter:destinationFilter) | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+
+			<!-- CHECKBOX & LABEL -->
+			<div class="packlist-label-container">
+				<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'rememberTo')">
+				<label for="{{x.item}}"> 
+					<span class="packlist-label">{{x.item | capitalize}}</span>
+				</label>
+			</div>
+
+			<!-- FLAG -->
+			<span ng-show="x.flag==true || hover==true" ng-click="x.flag=!x.flag" class="list-item-btns flag">
+				<span ng-show="x.flag"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+				<span ng-show="!x.flag&&hover"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+			</span>
+
+			<!--  DELETE -->
+			<span ng-click="deleteSingleItem(x,'rememberTo')" class="list-item-btns delete">
+				<i class="ion-close-round"></i>
+			</span>
+
+		</div>
+
+		<!-- ADD ITEM -->
+		<form ng-class="{'input-filled': rememberToInput}" ng-submit="addItem('rememberToInput','rememberTo')" class="list-item-input" autocomplete="off" > 
+			<input ng-model="rememberToInput" class="input-field" type="text" id="input-1" />
+			<label  class="input-label" for="input-1">
+				<span class="input-label-placeholder">Add New Item</span>
+			</label>
+		</form>
+	</div> <!-- END OF SUBLIST -->
+
 </div>

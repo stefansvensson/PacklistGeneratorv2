@@ -26,3 +26,22 @@ factory('notify', ['$window', function(win) {
 .factory('getUrl', function(){
   return 'hej';
 });*/
+
+var services= angular.module('ngBoilerplate.services', []);
+
+services.service('destinationService', function() {
+
+  var abroad ='';
+
+  this.isAbroad = function(){
+    return abroad;
+  };
+
+  this.updateDestination = function(input){
+    if(input==='domestic'){
+      abroad=false;
+    } else{
+      abroad = '';
+    }
+  };
+});

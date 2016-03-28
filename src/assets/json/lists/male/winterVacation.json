@@ -1,22 +1,23 @@
 {
     "description":"Winter Vacation",
     "clothes":[
-        {"item": "byxor", "done":false, "flag":true},
-        {"item": "tröja", "done":false, "flag":false},
-        {"item": "strumpor", "done":false, "flag":false}
+        {"item": "byxor", "done":false, "flag":true,"abroad":false},
+        {"item": "tröja", "done":false, "flag":false,"abroad":false},
+        {"item": "strumpor", "done":false, "flag":false,"abroad":false}
     ],  
     "gadgets":[ 
-        {"item": "mobil", "done":false},
-        {"item": "iPad", "done":false},
-        {"item": "laddare", "done":false}
+        {"item": "mobil", "done":false,"flag":true,"abroad":false},
+        {"item": "iPad", "done":false,"flag":false,"abroad":false},
+        {"item": "laddare", "done":false,"flag":true,"abroad":false},
+        {"item": "passport", "done":false,"flag":true, "abroad":true}
     ],  
     "toiletries":[  
-        {"item": "alvedon", "done":false},
-        {"item": "tandborste", "done":false},
-        {"item": "tvål", "done":false}
+        {"item": "alvedon", "done":false,"flag":false,"abroad":false},
+        {"item": "tandborste", "done":false,"flag":true,"abroad":false},
+        {"item": "tvål", "done":false,"flag":false,"abroad":false}
     ],
     "rememberTo":[  
-        {"item": "betala räkningar", "done":false},
-        {"item": "släck ljusen", "done":false}
+        {"item": "betala räkningar", "done":false,"flag":true,"abroad":false},
+        {"item": "släck ljusen", "done":false,"flag":true,"abroad":false}
     ]
 }

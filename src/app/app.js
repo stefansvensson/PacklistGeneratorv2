@@ -7,7 +7,8 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.start',
   'ngBoilerplate.settings',
   'ngBoilerplate.packlists',
-  'AwesomeFilters',
+  'ngBoilerplate.filters',
+  'ngBoilerplate.services',
   'ui.router',
   'ngAnimate'
 ])

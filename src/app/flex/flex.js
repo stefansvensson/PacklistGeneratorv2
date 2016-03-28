@@ -23,7 +23,12 @@ angular.module( 'ngBoilerplate.flex', [
   });
 })
 
-.controller( 'FlexCtrl', function FlexCtrl( $scope ) {
+.controller( 'FlexCtrl', function FlexCtrl( $scope, destinationService ) {
+
+  /*destinationService.updateDestination(true);
+
+  $scope.fromService = destinationService.sayHello("Stefan");
+  $scope.abroad = destinationService.isAbroad();*/
 /*  $scope.updateHeightOfImage = function(){
     var bckgrndImg = document.getElementById('background-image-container');
     var packlistFrame = document.getElementById('packlist-frame');

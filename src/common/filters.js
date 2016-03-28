@@ -1,17 +1,6 @@
-/*angular.module('ngBoilerplate.filters', []).filter('capitalize', function() {
-  return function(input, scope) {
-    if(input!=null) {
-      input=input.toLowerCase();
-      return input.substring(0,1).toUpperCase()+input.substring(1);
-    }
-  };
-});*/
+var filters= angular.module('ngBoilerplate.filters', []);
 
-
-var AwesomeFilters= angular.module('AwesomeFilters', []);
-
-
-AwesomeFilters.filter('capitalize', function() {
+filters.filter('capitalize', function() {
   return function(input, scope) {
     if (input!=null) {
       input = input.toLowerCase();
@@ -19,3 +8,12 @@ AwesomeFilters.filter('capitalize', function() {
     }
   };
 });
+
+/*filters.filter('destinationFilter', ['destinationService', function(destinationService){
+  return function(input, scope){
+    var abroad = destinationService.isAbroad();
+    if(input.abroad===abroad || input.abroad===''){
+      return  input;
+    }
+  };
+}]);*/
