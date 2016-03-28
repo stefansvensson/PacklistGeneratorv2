@@ -62,13 +62,15 @@ label:before {
 	border-radius: 3px;
 }
 
-input:checked + label {
+input:checked + label,
+.checked-label {
 	color:gray;
 	text-decoration: line-through;
 	transition: all ease-in-out .3s;
 }
 
-input:checked + label:before {
+input:checked + label:before,
+.checked-input {
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);

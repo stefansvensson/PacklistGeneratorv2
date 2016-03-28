@@ -1,5 +1,11 @@
 {
     "description":"Winter Vacation",
+    "completeCounter": {
+        "clothes":0,
+        "gadgets":0,
+        "toiletries":0,
+        "rememberTo":0
+        },
     "clothes":[
         {"item": "byxor", "done":false, "flag":true,"abroad":false},
         {"item": "tröja", "done":false, "flag":false,"abroad":false},

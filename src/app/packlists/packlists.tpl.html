@@ -1,5 +1,10 @@
 <!-- SETTINGS.TPL.HTML -->
 <div class="cover-packlists-container">
+
+	<div class="packlist-main-header">
+
+	<div>
+
 	<!-- FILTERS -->
 	<div class="packlist-filter-container">
 		
@@ -39,6 +44,10 @@
 			<div class="packlist-btn clear-btn" ng-class="{'packlist-btn-selected': itemFilter===true}" ng-click="clearCompleted()">
 				<a class="clear-btn-label">Clear Completed</a>
 			</div>
+
+			<div class="packlist-btn clear-btn" ng-class="{'packlist-btn-selected': itemFilter===true}" ng-click="resetPacklist()">
+				<a class="clear-btn-label">Reset Packlist</a>
+			</div>
 		</div>
 	</div>
 
@@ -51,7 +60,7 @@
 		<div class="list-header-container">
 			<input type="checkbox" id="checkAll.clothes" ng-model="checkAll.clothes" ng-change="completeAll(checkAll.clothes,'clothes')">
 			<label for="checkAll.clothes"> 
-				<span class="list-header">Clothes ({{packlist.clothes.length - completedCounter.clothes}})</span>
+				<span class="list-header">Clothes ({{packlist.clothes.length - packlist.completeCounter.clothes}})</span>
 			</label>
 		</div>
 
@@ -97,7 +106,7 @@
 		<div class="list-header-container">
 			<input type="checkbox" id="checkAll.toiletries" ng-model="checkAll.toiletries" ng-change="completeAll(checkAll.toiletries,'toiletries')">
 			<label for="checkAll.toiletries"> 
-				<span class="list-header">Toiletries ({{packlist.toiletries.length - completedCounter.toiletries}})</span>
+				<span class="list-header">Toiletries ({{packlist.toiletries.length - packlist.completeCounter.toiletries}})</span>
 			</label>
 		</div>
 
@@ -143,7 +152,7 @@
 		<div class="list-header-container">
 			<input type="checkbox" id="checkAll.gadgets" ng-model="checkAll.gadgets" ng-change="completeAll(checkAll.gadgets,'gadgets')">
 			<label for="checkAll.gadgets"> 
-				<span class="list-header">Gadgets ({{gadgetsFiltered.length - completedCounter.gadgets}})</span>
+				<span class="list-header">Gadgets ({{gadgetsFiltered.length - packlist.completeCounter.gadgets}})</span>
 			</label>
 		</div>
 
@@ -189,7 +198,7 @@
 		<div class="list-header-container">
 			<input type="checkbox" id="checkAll.rememberTo" ng-model="checkAll.rememberTo" ng-change="completeAll(checkAll.rememberTo,'rememberTo')">
 			<label for="checkAll.rememberTo"> 
-				<span class="list-header">Remember To ({{packlist.rememberTo.length - completedCounter.rememberTo}})</span>
+				<span class="list-header">Remember To ({{packlist.rememberTo.length - packlist.completeCounter.rememberTo}})</span>
 			</label>
 		</div>
 

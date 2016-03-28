@@ -9,6 +9,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.packlists',
   'ngBoilerplate.filters',
   'ngBoilerplate.services',
+  'LocalStorageModule',
   'ui.router',
   'ngAnimate'
 ])
