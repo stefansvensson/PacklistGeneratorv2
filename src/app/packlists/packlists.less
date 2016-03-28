@@ -9,7 +9,7 @@
 }
 
 .cover-packlists-container > *{
-	border: 1px solid yellow;
+	/*border: 1px solid yellow;*/
 }
 
 /* LABEL + CHECKBOXES 
@@ -227,7 +227,7 @@ prevents the placeholder text to return to initial position*/
 }
 
 .packlist-filters-left{
-	text-align: left;
+	display: flex;
 	flex: 1;
 }
 
@@ -237,36 +237,153 @@ prevents the placeholder text to return to initial position*/
 }
 
 .packlist-filters-right{
+	display: flex;
 	flex: 1;
-	text-align: right;
+	justify-content: flex-end;
 }
 
+/*border, padding and margin of button*/
 .packlist-btn{
-	color: gray;
 	margin-right: 5px;
 	border: 1px solid transparent;
 	border-radius: 4px;
-	font-size: 16px;
 	cursor: pointer;
-	padding: 2px 5px;
+	padding: 0px 5px;
 }
 
+/*show border of inactive button when hover*/
 .packlist-btn:hover{
 	border-color: gray;
+}
+
+/*set label color to gray for inactive buttons*/
+.packlist-btn-label,
+.packlist-btn:hover .packlist-btn-label{
 	color: gray;
 }
 
-.clear-btn{
+/*set border color to white when active*/
+.packlist-btn-selected,
+.packlist-btn-selected:hover{
+	border-color: white;
+}
+
+/*set text color to white for active buttons*/
+.packlist-btn-selected .packlist-btn-label,
+.packlist-btn-selected:hover .packlist-btn-label{
+	color: white;
+}
+
+/*set border color to always be white*/
+.clear-btn,
+.clear-btn:hover{
+	border-color: white;
 	margin-right: 0px;
 }
 
-.packlist-btn-selected,
-.packlist-btn-selected:hover,
-.clear-btn,
-.clear-btn:hover {
-	border-color: white;
+/*set text color to white for clear button*/
+.clear-btn-label{
 	color: white;
 }
+
+/* SEARCH
+============================================================================= 
+*/
+.search-input {
+	width: 120px;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin-right: 5px;
+	border-radius: 4px;
+}
+
+.search-input-field {
+	float: right;
+	border: none;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+	width: 100%;
+	background: transparent;
+	padding: 0px;
+	padding-left: 6px;
+}
+
+.search-input-label {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: absolute;
+	width: 100%;
+	text-align: left;
+	pointer-events: none;
+	margin-bottom: 0px;
+	height: 100%;
+}
+
+/*the top and bottom border lines*/
+.search-input-label::before,
+.search-input-label::after {
+	display: none;
+}
+
+/*the placeholder text "add new item"*/
+.search-input-label-placeholder {
+	display: block;
+	font-weight: normal;
+	color: gray;
+	font-style: italic;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.top-left-right-borders{
+	background-color: transparent;
+	width: 100%;
+	height: 27px;
+	border-radius: 4px;
+	border: 1px solid gray;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+/*bottom border that is resized when search field focused*/
+.search-border-bottom{
+	height: 2px;
+	width: 100%;
+	background: gray;
+	-webkit-transform: scale3d(1, .5, 1);
+	transform: scale3d(1, .5, 1);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	float: left;
+}
+
+/*move the placeholder text downwards when input box focused*/
+.search-input-field:focus + .top-left-right-borders .search-input-label .search-input-label-placeholder,
+.input-filled .search-input-label-placeholder {
+	-webkit-transform: translate3d(0, 90%, 0);
+	transform: translate3d(0, 90%, 0);
+}
+
+/*resize bottom border (and "reposition") when when input box focused*/
+.search-border-bottom-after,
+.search-input-field:focus + .top-left-right-borders .search-border-bottom{
+	background-color: white;
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+}
+
+/*remove border when box focused*/
+.search-input-field:focus + .top-left-right-borders,
+.top-left-right-borders-after{
+	border-color: transparent;
+}
+
 
 
 

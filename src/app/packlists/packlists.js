@@ -101,6 +101,8 @@ angular.module( 'ngBoilerplate.packlists', [
         }
         if($scope.packlist[list].length === $scope.completedCounter[list]){
             $scope.checkAll[list]=true;
+        } else {
+            $scope.checkAll[list]=false;
         }
     };
 
