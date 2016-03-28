@@ -6,14 +6,17 @@
 		
 		<!-- LEFT -->
 		<div class="packlist-filters-left">
-			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===''}">
-				<a ng-click="changeItemStatus()" class="packlist-btn-label" >All</a>
+			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===''}" ng-click="changeItemStatus()">
+				<a class="packlist-btn-label" >All</a>
 			</div>
-			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===false}">
-				<a ng-click="changeItemStatus(false)" class="packlist-btn-label">Active</a>
+			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===false}" ng-click="changeItemStatus(false)">
+				<a class="packlist-btn-label">Active</a>
 			</div>
-			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===true}">
-				<a ng-click="changeItemStatus(true)" class="packlist-btn-label">Completed</a>
+			<div class="packlist-btn" ng-class="{'packlist-btn-selected': itemFilter===true}" ng-click="changeItemStatus(true)" >
+				<a class="packlist-btn-label">Completed</a>
+			</div>
+			<div ng-click="flagFilter=!flagFilter" ng-class="{'packlist-btn-selected': flagFilter}" class="packlist-btn" >
+				<a class="packlist-btn-label">Essentials</a>
 			</div>
 		</div>
 		
@@ -34,8 +37,8 @@
 				</div>
 			</form>
 
-			<div class="packlist-btn clear-btn" ng-class="{'packlist-btn-selected': itemFilter===true}">
-				<a ng-click="clearCompleted()" class="clear-btn-label">Clear Completed</a>
+			<div class="packlist-btn clear-btn" ng-class="{'packlist-btn-selected': itemFilter===true}" ng-click="clearCompleted()">
+				<a class="clear-btn-label">Clear Completed</a>
 			</div>
 		</div>
 	</div>
@@ -57,13 +60,26 @@
 		<!-- <div ng-repeat="x in packList.clothes | orderBy:'packListItem' | filter:{packListItem:query} | filter: statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false"> -->
 
 		<!-- NG-REPEAT -->
-		<div ng-repeat="x in packlist.clothes | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="animate-repeat">
+		<div ng-repeat="x in packlist.clothes | orderBy:'item' | filter:{item:searchQuery} | filter:statusFilter | filter:(flagFilter || '') && {flag: flagFilter}" class="list-item-container animate-repeat" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
 
 			<!-- CHECKBOX & LABEL -->
-			<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
-			<label for="{{x.item}}"> 
-				<span class="packlist-label">{{x.item | capitalize}}</span>
-			</label>
+			<div class="packlist-label-container">
+				<input type="checkbox" id="{{x.item}}" ng-model="x.done" ng-change="updateCompletedCounter(x,'clothes')">
+				<label for="{{x.item}}"> 
+					<span class="packlist-label">{{x.item | capitalize}}</span>
+				</label>
+			</div>
+
+			<!-- FLAG -->
+			<span ng-show="x.flag==true || hover==true" ng-click="x.flag=!x.flag" class="list-item-btns flag">
+				<span ng-show="x.flag"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+				<span ng-show="!x.flag&&hover"><i ng-class="{enabledflag:x.flag}" class="fa fa-flag "></i></span>
+			</span>
+
+			<!--  DELETE -->
+			<span ng-click="deleteSingleItem(x,'clothes')" class="list-item-btns delete">
+				<i class="ion-close-round"></i>
+			</span>
 
 		</div>
 

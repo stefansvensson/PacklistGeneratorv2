@@ -155,4 +155,8 @@ angular.module( 'ngBoilerplate.packlists', [
         });
     };
 
+    $scope.deleteSingleItem = function(item,list){
+            $scope.packlist[list].splice($scope.packlist[list].indexOf(item),1);
+        };
+
 }]);

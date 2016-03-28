@@ -12,28 +12,41 @@
 	/*border: 1px solid yellow;*/
 }
 
-.list-item-container{
-	border: 1px solid red;
-}
-
 /* LABEL + CHECKBOXES 
 ============================================================================= 
 */
+
+.packlist-label-container{
+	width: 86% !important;
+	line-height: 1.1;
+	display: flex;
+	align-items: center;
+	word-wrap: break-word;
+	margin-bottom: 3px;
+}
+
+.packlist-label{
+	width: ~"calc(100% - 25px)";
+	margin-top: 3px;
+}
 
 label {
 	background:transparent;
 	position: relative;
 	cursor: pointer;
 	word-wrap: break-word;
-	height: 20px;
+	/*height: 20px;*/
 	display: flex;
 	align-items: center;
-	font-size: 15px;
+	/*font-size: 15px;*/
+	width: 100%;
 }
 
 label .ng-binding{
 	margin-left:25px;
 	font-weight: 100;
+	/*margin-bottom: 7px;*/
+	word-wrap: break-word;
 }
 
 label:before {
@@ -86,6 +99,36 @@ input:checked + label:after {
 	left:-9999px;
 }
 
+/* FLAG AND DELETE BUTTONS
+============================================================================= 
+*/
+
+.list-item-container{
+	display: flex;
+	width: 95%;
+}
+
+.list-item-btns{
+	text-align: center;
+	cursor: pointer;
+	width: 17px;
+	border:1px solid transparent;
+	width: 7%;
+}
+
+.delete{
+	color: darkred;
+	display: none;
+}
+
+.flag{
+	color: rgba(255,165,0,.3);
+
+}
+.enabledflag{
+	color: orange;
+}
+
 /* ADD NEW ITEM FORM
 ============================================================================= 
 */
@@ -103,7 +146,7 @@ input:checked + label:after {
 	float: right;
 	border: none;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
-	margin-top: -5px;
+	margin-top: -3px;
 	padding: 0.3em 0.25em;
 	padding-left: 1em;
 	width: 100%;
@@ -151,7 +194,7 @@ input:checked + label:after {
 }
 
 .input-label::after {
-	margin-top: 22px;
+	margin-top: 30px;
 }
 
 /*class to be added when input field contains text
@@ -190,8 +233,8 @@ prevents the placeholder text to return to initial position*/
 /*move the placeholder text downwards when input box focused*/
 .input-field:focus + .input-label .input-label-placeholder,
 .input-filled .input-label-placeholder {
-	-webkit-transform: translate3d(0, 70%, 0);
-	transform: translate3d(0, 70%, 0);
+	-webkit-transform: translate3d(0, 90%, 0);
+	transform: translate3d(0, 90%, 0);
 }
 
 #warning-Msg{
@@ -208,6 +251,7 @@ prevents the placeholder text to return to initial position*/
 	border-bottom: 1px solid gray;
 	margin-bottom: 5px;
 	width: 95%;
+	padding-bottom: 5px;
 }
 
 .list-header{
@@ -215,7 +259,7 @@ prevents the placeholder text to return to initial position*/
 	font-size: 18px;
 	font-weight: bold;
 	height: 20px;
-	margin-top: -10px;
+	margin-top: -5px;
 }
 
 /* PACKLIST FILTERS
@@ -393,6 +437,15 @@ prevents the placeholder text to return to initial position*/
 */
 
 /*	SCALE */
+
+.animate-repeat:hover .list-item-btns{
+	display:inline;
+}
+
+/*.animate-repeat:hover input:not(:checked) + label{
+	font-weight: bold;
+	font-size: 15px;
+}*/
 
 .animate-repeat {
 	text-align: left;
